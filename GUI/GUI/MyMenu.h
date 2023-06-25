@@ -144,6 +144,7 @@ public ref class MyMenu : public System::Windows::Forms::Form
 			this->textBox1->Size = System::Drawing::Size(100, 20);
 			this->textBox1->TabIndex = 8;
 			this->textBox1->Text = L"8";
+			this->textBox1->KeyPress += gcnew KeyPressEventHandler(this, &MyMenu::numberTextBox_KeyPress);
 			// 
 			// textBox2
 			// 
@@ -152,6 +153,7 @@ public ref class MyMenu : public System::Windows::Forms::Form
 			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 9;
 			this->textBox2->Text = L"8";
+			this->textBox2->KeyPress += gcnew KeyPressEventHandler(this, &MyMenu::numberTextBox_KeyPress);
 			// 
 			// textBox3
 			// 
@@ -160,6 +162,7 @@ public ref class MyMenu : public System::Windows::Forms::Form
 			this->textBox3->Size = System::Drawing::Size(100, 20);
 			this->textBox3->TabIndex = 10;
 			this->textBox3->Text = L"10";
+			this->textBox3->KeyPress += gcnew KeyPressEventHandler(this, &MyMenu::numberTextBox_KeyPress);
 			// 
 			// label1
 			// 
@@ -195,7 +198,7 @@ public ref class MyMenu : public System::Windows::Forms::Form
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(54, 13);
 			this->label4->TabIndex = 13;
-			this->label4->Text = L"Iloœæ min: ";
+			this->label4->Text = L"IloÅ›Ä‡ min: ";
 			// 
 			// button8
 			// 
@@ -213,7 +216,7 @@ public ref class MyMenu : public System::Windows::Forms::Form
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(85, 26);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"Pocz¹tkuj¹cy";
+			this->button1->Text = L"PoczÄ…tkujÄ…cy";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyMenu::button1_Click);
 			// 
@@ -266,7 +269,7 @@ public ref class MyMenu : public System::Windows::Forms::Form
 		textBox3->Text = "99";
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		MessageBox::Show("Gra polega na odkrywaniu na planszy poszczególnych pól w taki sposób, aby nie natrafiæ na minê. Na ka¿dym z odkrytych pól napisana jest liczba min, które bezpoœrednio stykaj¹ siê z danym polem (od zera do oœmiu). Nale¿y u¿ywaæ tych liczb by wydedukowaæ gdzie schowane s¹ miny."+"\n\n" +"Gra zawiera 4 typy rozgrywki : " + "\n" + "Pocz¹tkuj¹cy – plansza 8×8 pól, 10 min, ryzyko trafienia na minê: 15,625%" + "\n"+"Zaawansowany – plansza 16×16 pól, 40 min, ryzyko trafienia na minê: 15,625%" + "\n"+"Ekspert – plansza 30×16 pól, 99 min, ryzyko trafienia na minê: 20,625%" + "\n"+"Plansza u¿ytkownika – gracz sam wybiera rozmiary planszy (od 8×8 do 30×24 pól) i liczbê min (od 10 do 240)." + "\n" + "\n"+"Mo¿liwa maksymalna liczba min zale¿na jest od rozmiarów planszy. Dla planszy o rozmiarach A×B maksymalna liczba wynosi A×B/3, czyli np. na planszy o rozmiarach 12×16 pól mo¿e byæ najwy¿ej 12×16/3=64 miny.");
+		MessageBox::Show("Gra polega na odkrywaniu na planszy poszczegÃ³lnych pÃ³l w taki sposÃ³b, aby nie natrafiÄ‡ na minÄ™. Na kaÅ¼dym z odkrytych pÃ³l napisana jest liczba min, ktÃ³re bezpoÅ›rednio stykajÄ… siÄ™ z danym polem (od zera do oÅ›miu). NaleÅ¼y uÅ¼ywaÄ‡ tych liczb by wydedukowaÄ‡ gdzie schowane sÄ… miny."+"\n\n" +"Gra zawiera 4 typy rozgrywki : " + "\n" + "PoczÄ…tkujÄ…cy â€“ plansza 8Ã—8 pÃ³l, 10 min, ryzyko trafienia na minÄ™: 15,625%" + "\n"+"Zaawansowany â€“ plansza 16Ã—16 pÃ³l, 40 min, ryzyko trafienia na minÄ™: 15,625%" + "\n"+"Ekspert â€“ plansza 30Ã—16 pÃ³l, 99 min, ryzyko trafienia na minÄ™: 20,625%" + "\n"+"Plansza uÅ¼ytkownika â€“ gracz sam wybiera rozmiary planszy (od 8Ã—8 do 30Ã—24 pÃ³l) i liczbÄ™ min (od 10 do 240)." + "\n" + "\n"+"MoÅ¼liwa maksymalna liczba min zaleÅ¼na jest od rozmiarÃ³w planszy. Dla planszy o rozmiarach AÃ—B maksymalna liczba wynosi AÃ—B/3, czyli np. na planszy o rozmiarach 12Ã—16 pÃ³l moÅ¼e byÄ‡ najwyÅ¼ej 12Ã—16/3=64 miny.");
 
 	}
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -286,7 +289,7 @@ public ref class MyMenu : public System::Windows::Forms::Form
 		String^ bomb = textBox3->Text;
 		if (x == ""|| y == "" || bomb=="")
 		{
-			MessageBox::Show("Wpisz dane wejœæiowe odnoœnie iloœci pól i min");
+			MessageBox::Show("Wpisz dane wejÅ›Ä‡iowe odnoÅ›nie iloÅ›ci pÃ³l i min");
 		}
 		else 
 		{
@@ -295,15 +298,15 @@ public ref class MyMenu : public System::Windows::Forms::Form
 			boardBomb = System::Convert::ToInt16(bomb);
 			if (boardCol < 8 || boardCol>30)
 			{
-				MessageBox::Show("Niepoprawna iloœæ kolumn"+"\n"+"Iloœæ kolumn musi byæ z zakresu od 8 do 30");
+				MessageBox::Show("Niepoprawna iloÅ›Ä‡ kolumn"+"\n"+"IloÅ›Ä‡ kolumn musi byÄ‡ z zakresu od 8 do 30");
 			}
 			else if (boardRow < 8 || boardRow>24)
 			{
-				MessageBox::Show("Niepoprawna iloœæ wierszy" + "\n" + "Iloœæ wierszy musi byæ z zakresu od 8 do 24");
+				MessageBox::Show("Niepoprawna iloÅ›Ä‡ wierszy" + "\n" + "IloÅ›Ä‡ wierszy musi byÄ‡ z zakresu od 8 do 24");
 			}
 			else if ((boardBomb < 10 || boardBomb>240)|| boardBomb > boardCol* boardRow/3)
 			{
-				MessageBox::Show("Niepoprawna iloœæ bomb");
+				MessageBox::Show("Niepoprawna iloÅ›Ä‡ bomb");
 			}
 			else 
 			{
