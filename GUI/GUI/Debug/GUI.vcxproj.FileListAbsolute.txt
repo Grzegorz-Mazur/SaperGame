@@ -1,0 +1,5 @@
+C:\Users\Admin\source\repos\GUI\GUI\Debug\GUI.vcxproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\GUI\GUI\Debug\GUI.vcxproj.GenerateResource.cache
+C:\Users\Admin\source\repos\GUI\GUI\Debug\GUI.vcxproj.SuggestedBindingRedirects.cache
+C:\Users\Admin\source\repos\GUI\GUI\Debug\GUI.MyMenu.resources
+C:\Users\Admin\source\repos\GUI\GUI\Debug\GUI.MyGame.resources
